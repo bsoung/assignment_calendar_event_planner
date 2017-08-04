@@ -4,22 +4,28 @@ let User = models.User;
 
 module.exports = {
 	showCalendars: (req, res) => {
-		// let options = {
-		// 	order: ["id"],
-		// 	include: [{ model: User }]
-		// };
+		let options = {
+			order: ["id"],
+			include: [
+				{
+					model: User,
+					attributes: ["id", "username", "email"],
+					where: { id: Calendar.userId }
+				}
+			]
+		};
 
-		Calendar.findAll()
+		Calendar.findAll(options)
 			.then(calendars => {
-				// const finalObject = calendars.map(calendar => {
-				// 	console.log(calendar.users);
-
-				// 	return {
-				// 		name: calendar.name,
-				// 		username: calendar.users.username,
-				// 		email: calendar.users.email
-				// 	};
-				// });
+				console.log(calendars, "????????");
+				const finalObject = calendars.map(calendar => {
+					// console.log(calendar, "???");
+					// return {
+					// 	name: calendar.name,
+					// 	username: calendar.users.username,
+					// 	email: calendar.users.email
+					// };
+				});
 
 				// console.log(finalObject);
 				res.end("Hi.");

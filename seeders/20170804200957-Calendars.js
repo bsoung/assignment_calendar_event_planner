@@ -17,7 +17,8 @@ module.exports = {
     let calendars = [];
     for (let calendarId = 0; calendarId < 4; calendarId++) {
       calendars.push({
-        name: `MyCalendar{i}`
+        name: `MyCalendar{i}`,
+        userId: 1
       });
     }
 

@@ -4,6 +4,6 @@ module.exports = {
     return;
   },
   down: function(queryInterface, Sequelize) {
-    return queryInterface.dropTable("Calendars");
+    return queryInterface.dropTable("Users");
   }
 };

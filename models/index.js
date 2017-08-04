@@ -40,8 +40,4 @@ Object.keys(db).forEach(function(modelName) {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-// Relations
-db.User.hasMany(db.Calendar);
-db.Calendar.belongsTo(db.User);
-
 module.exports = db;
